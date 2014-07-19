@@ -1,0 +1,49 @@
+[How to build/install dart sdk in centos 2014/07/20]
+
+
+###############
+### install sdk
+
+  [create env]
+   sudo yum -y install subversion
+   sudo yum -y install make
+   sudo yum -y install gcc-c++
+   sudo yum -y install java-1.6.0-openjdk-devel
+
+   gclient config http://dart.googlecode.com/svn/branches/1.5/deps/all.deps
+   gclient sync
+   gclient runhooks
+
+  [build]
+   cd dart
+   tools/build.py --mode=release --arch=x64 create_sdk
+
+  [ref]
+   https://code.google.com/p/dart/wiki/BuildingOnCentOS
+
+
+###############
+### install all
+  [env]
+   yum search jdk
+   yum install java-1.6.0-openjdk.x86_64
+   yum install java-1.7.0-openjdk.x86_64
+   yum install java-1.6.0-openjdk-devel.x86_64
+   yum install java-1.7.0-openjdk-devel.x86_64
+
+  [install]
+   cd dart
+   tools/build.py --mode=release --arch=x64
+
+###############
+### memo
+ - update package 
+   pub get
+   pub upgrade
+
+ - execute
+   dart xxx.dart
+
+
+
+
