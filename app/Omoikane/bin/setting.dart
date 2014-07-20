@@ -1,5 +1,5 @@
-
 part of omoikane;
+
 class Setting {
   static final String KEY_IP = "ip";
   static final String KEY_PORT = "port";

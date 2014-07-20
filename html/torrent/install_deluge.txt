@@ -1,0 +1,15 @@
+install deluge this way:
+
+1.Create the repository config file /etc/yum.repos.d/linuxtech.repo:
+
+[linuxtech]
+name=LinuxTECH
+baseurl=http://pkgrepo.linuxtech.net/el6/release/
+enabled=1
+gpgcheck=1
+gpgkey=http://pkgrepo.linuxtech.net/el6/release/RPM-GPG-KEY-LinuxTECH.NET
+2.Install deluge rpm package:
+
+ # yum install deluge
+
+ref http://unix.stackexchange.com/questions/107577/torrent-with-gui-for-gnome-on-centos-6
