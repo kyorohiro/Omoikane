@@ -1,0 +1,24 @@
+
+[Setting]
+  - set
+    ~/.ssh/config
+
+  Host xxxxx
+    HostName xxx.xxx.xxx.xxx
+    User xxx(root)
+    Port xx(22)
+    IdentityFile ~/.ssh/xxxx.key
+
+  - access perission
+    chmod 600 ~/.ssh/xxxx.key
+
+
+[exe]
+ - ssh
+  ssh xxxxx
+ - port forwarding
+  ssh -N -L 10001:127.0.0.1:yyyy nnn.nnn.nnn.nnn -l zzzz 
+
+nnn.nnn.nnn.nnn is ip
+yyyy is port number
+zzzz is id

@@ -1,0 +1,49 @@
+
+[Desktop]
+yum -y groupinstall "Desktop" "General Purpose Desktop" "Japanese Support”
+useradd xxx
+passwd xxx
+
+[VNC]
+yum -y install tigervnc tigervnc-server
+/etc/sysconfig/vncservers
+
+iptables -L --line-numbers
+iptables -I INPUT 5 -m state --state NEW -m tcp -p tcp --dport yyyy -j ACCEPT
+service iptables save
+service iptables restart
+
+/etc/inittab 
+id:5:initdefault
+
+reboot
+
+
+[Chrome]
+1
+2
+3
+# wget http://people.centos.org/hughesjr/chromium/6/chromium-el6.repo
+# cp chromium-el6.repo /etc/yum.repos.d/
+# yum -y install chromium
+http://www.conoha.jp/blog/715.html
+
+
+emacs /etc/yum.repos.d/goog..repo
+>[google]
+>name=Google - i386
+>baseurl=http://dl.google.com/linux/rpm/stable/i386
+>enabled=1
+>gpgcheck=1
+>gpgkey=https://dl-ssl.google.com/linux/linux_signing_key.pub
+>
+>[google64]
+>name=Google - x86_64
+>baseurl=http://dl.google.com/linux/rpm/stable/x86_64
+>enabled=1
+>gpgcheck=1
+>gpgkey=https://dl-ssl.google.com/linux/linux_signing_key.pub
+>yum install google-chrome-stable
+>
+
+
