@@ -1,10 +1,10 @@
-part of omoikane;
+part of omoikane_http;
 
-class Setting {
+class HttpSetting {
   static final String KEY_IP = "ip";
   static final String KEY_PORT = "port";
   static final String KEY_ROOT = "root";
-  String settingfilePath = "../../../setting";
+  String settingfilePath = "../../../setting_http";
 
   Future<Map<String, Object>> read() {
     Completer<Map<String, Object>> completer = new Completer();
@@ -12,7 +12,7 @@ class Setting {
       File fpath = new File(settingfilePath);
       return fpath.readAsBytes().then((List<int> buffer) {
         Map<String,Object> obj = Bencode.decode(buffer);
-        completer.complete(obj as Map<String, Object>);
+        completer.complete(obj);
       });
     }).catchError((e) {
       Map<String, Object> r = new Map();
